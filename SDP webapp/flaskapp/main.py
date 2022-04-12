@@ -55,6 +55,7 @@ def overrides():
     return render_template('overrides.html', sensor_reading="Click to view current sensor readings")
 
 @main.route('/move')
+#update direction to be 23 for (2,3)
 def move():
     if (request.args.get('direction', default = 'none', type = str) == 'forward'):
         message = "f"
@@ -86,3 +87,8 @@ def gridding():
 def getPlots():
     return "plots.json"
 
+
+# if __name__ == '__main__':
+#     tl.start(block=False)
+#     # If debug is set to true, another timeloop instance is started for some reason
+#     app.run(host='0.0.0.0', debug=False)
